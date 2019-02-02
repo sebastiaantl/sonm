@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block main %}
+<div id="data">
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">ETH HASH</th>
+        <th scope="col">AMOUNT OF DEALS</th>
+        <th scope="col">UNIQUE CONSUMERS</th>
+        <th scope="col">UNIQUE SUPPLIERS</th>
+        <th scope="col">HOURLY VOLUME</th>
+        <th scope="col">TOTAL DEALS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{total_eth_hash}} MH/S</td>
+        <td>{{live_deals}}</td>
+        <td>{{unique_consumers_amount}}</td>
+        <td>{{unique_suppliers_amount}}</td>
+        <td>{{hourly_volume}} USD</td>
+        <td>{{total_deals}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br><br>
+  <div class="tables">
+      <ul>
+          <li>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col"><h1>Consumers</h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for consumer in consumers%}
+              <tr><th scope="row">{{consumer}}</th></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+          </li>
+          <li>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col"><h1>Suppliers</h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for supplier in suppliers%}
+              <tr><th scope="row">{{supplier}}</th></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+          </li>
+          <li>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col"><h1>Live Deal ID's </h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ids in live_deals_ids%}
+              <tr><th scope="row">{{ids}}</th></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+          </li>
+      </ul>
+  </div>
+</div>
+{% endblock main %}

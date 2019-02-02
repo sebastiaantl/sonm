@@ -1,0 +1,28 @@
+.body{
+    width: 100%;
+}
+
+.tables{
+    max-width: 100%;
+    position: relative;
+    left: 0;
+}
+
+.tables table{
+    justify-content: center;
+    width: 100%;
+}
+
+.tables ul li{
+    float: left;
+    display: block;
+    list-style-type: none;
+    margin-left: 2em;
+    position: relative;
+    overflow:hidden;
+}
+
+.tables tr{
+    text-align: center;
+    width: 100%;
+}
